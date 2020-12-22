@@ -1,10 +1,11 @@
 import './App.css';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <p>Ecommerce site</p>
-    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+    </nav>
   );
 }
 
