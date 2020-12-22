@@ -1,11 +1,11 @@
 import './App.css';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import MasterPage from './Components/Views/Master/MasterPage'
 
 const App = () => {
   return (
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
-    </nav>
+    <div>
+      <MasterPage />
+    </div>
   );
 }
 
