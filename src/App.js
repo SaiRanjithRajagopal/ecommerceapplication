@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import MasterPage from './Components/Views/Master/MasterPage'
 

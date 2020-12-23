@@ -1,32 +1,47 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './MenuBarPage.css'
+import MensPage from '../Mens/MensPage'
+import WomensPage from '../Womens/WomensPage'
+import KidsPage from '../Kids/KidsPage'
+import LoginPage from '../Login/LoginPage'
+import HomePage from '../HomePage/HomePage'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
 const MenuBarPage = () => {
     return (
         <div>
-            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <h1 class="menubar-Heading">Online Clothing Collections</h1>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/users">Users</Link>
-                    </li>
-                </ul>
-            </nav>
-            <Switch>
-                <Route path="/about"><About />
-                </Route>
-                <Route path="/users"><Users />
-                </Route>
-                <Route path="/"><Home />
-                </Route>
-            </Switch>
+            {/* https://react-bootstrap.github.io/components/navbar/ */}
+            {/* https://stackoverflow.com/questions/54843302/reactjs-bootstrap-navbar-and-routing-not-working-together */}
+            <Router>
+                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                    <Navbar.Brand as={Link} to="/HomePage">Online Shopping</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="mr-auto">
+                            <Nav.Link as={Link} to="/Mens">Mens</Nav.Link>
+                            <Nav.Link as={Link} to="/Womens">Womens</Nav.Link>
+                            <Nav.Link as={Link} to="/Kids">Kids</Nav.Link>
+                            <NavDropdown title="Jackets" id="collasible-nav-dropdown">
+                                <NavDropdown.Item as={Link} to="/Mens">Mens</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/Womens">Womens</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/Kids">Kids</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item as={Link} to="/HomePage">Home</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                        <Nav>
+                            <Nav.Link as={Link} to="/LoginPage">Login</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+                <Switch>
+                    <Route exact path="/HomePage"><HomePage /></Route>
+                    <Route exact path="/Mens"><MensPage /></Route>
+                    <Route exact path="/Womens"><WomensPage /></Route>
+                    <Route exact path="/Kids"><KidsPage /></Route>
+                </Switch>
+            </Router>
         </div>
     )
 }
