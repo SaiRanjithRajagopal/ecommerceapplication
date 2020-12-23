@@ -1,12 +1,14 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import './MenuBarPage.css'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+
+import LoginPage from '../Login/LoginPage'
+import HomePage from '../HomePage/HomePage'
 import MensPage from '../Mens/MensPage'
 import WomensPage from '../Womens/WomensPage'
 import KidsPage from '../Kids/KidsPage'
-import LoginPage from '../Login/LoginPage'
-import HomePage from '../HomePage/HomePage'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+
+import './MenuBarPage.css'
 
 const MenuBarPage = () => {
     return (
@@ -31,11 +33,13 @@ const MenuBarPage = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
+                            <Nav.Link as={Link} to="/LoginPage">View Chart</Nav.Link>
                             <Nav.Link as={Link} to="/LoginPage">Login</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
                 <Switch>
+                    <Route exact path="/LoginPage"><LoginPage /></Route>
                     <Route exact path="/HomePage"><HomePage /></Route>
                     <Route exact path="/Mens"><MensPage /></Route>
                     <Route exact path="/Womens"><WomensPage /></Route>
