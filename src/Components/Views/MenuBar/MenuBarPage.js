@@ -7,6 +7,7 @@ import HomePage from '../HomePage/HomePage'
 import MensPage from '../Mens/MensPage'
 import WomensPage from '../Womens/WomensPage'
 import KidsPage from '../Kids/KidsPage'
+import CartPage from '../ViewCart/CartPage'
 
 import './MenuBarPage.css'
 
@@ -33,7 +34,7 @@ const MenuBarPage = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Nav.Link as={Link} to="/LoginPage">View Chart</Nav.Link>
+                            <Nav.Link as={Link} to="/CartPage">View Cart</Nav.Link>
                             <Nav.Link as={Link} to="/LoginPage">Login</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
@@ -41,6 +42,7 @@ const MenuBarPage = () => {
                 <Switch>
                     <Route exact path="/LoginPage"><LoginPage /></Route>
                     <Route exact path="/HomePage"><HomePage /></Route>
+                    <Route exact path="/CartPage"><CartPage /></Route>
                     <Route exact path="/Mens"><MensPage /></Route>
                     <Route exact path="/Womens"><WomensPage /></Route>
                     <Route exact path="/Kids"><KidsPage /></Route>

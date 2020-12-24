@@ -1,4 +1,5 @@
 import React from 'react'
+import PrimaryButton from '../../Controls/IndividualControls/ButtonControl'
 import './KidsPage.css'
 
 const KidsPage = () => {
@@ -10,7 +11,7 @@ const KidsPage = () => {
                     <div class="thumbnail">
                         <img src="https://cdn-mdb.head.com/CDN3/D/821650_WHAN/1/1200x1200/rebels-sun-jacket-men-white-anthracite.jpg" alt="Lights" />
                         <div class="caption">
-                            <p>Lorem ipsum...</p>
+                            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum...</p><PrimaryButton buttonType="Primary">Add Cart</PrimaryButton>
                         </div>
                     </div>
                 </div>
